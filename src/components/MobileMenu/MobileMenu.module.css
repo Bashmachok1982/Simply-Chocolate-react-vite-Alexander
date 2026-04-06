@@ -1,0 +1,78 @@
+.mobMenu {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  background: #1e1823;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.3s,
+    visibility 0.3s;
+}
+
+.mobMenuOpen {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.menuCloseBtn {
+  display: block;
+  margin-left: auto;
+  margin-bottom: 88px;
+  color: #fff;
+}
+.menuCloseBtn svg {
+  fill: transparent;
+  stroke-width: 2px;
+  stroke: #fff;
+}
+
+.mobMenuList {
+  margin-bottom: 50px;
+}
+
+.mobMenuItem:not(:last-child) {
+  margin-bottom: 24px;
+}
+
+.mobMenuLink {
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.mobMenuLink:hover,
+.mobMenuLink:focus {
+  color: #fd9222;
+}
+
+.mobContacts {
+  margin-top: auto;
+}
+
+.mobContactsList {
+  display: flex;
+  gap: 18px;
+}
+
+.mobContactsIcon {
+  fill: transparent;
+  stroke: #fff;
+  transition: stroke 0.3s;
+}
+
+.mobContactsLink:hover .mobContactsIcon,
+.mobContactsLink:focus .mobContactsIcon {
+  stroke: #fd9222;
+}

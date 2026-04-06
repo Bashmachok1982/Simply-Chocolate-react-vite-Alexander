@@ -1,0 +1,101 @@
+.header {
+  padding-top: 28px;
+  padding-bottom: 28px;
+}
+
+.headerContainer {
+  display: flex;
+  align-items: center;
+}
+
+.headerNavigation {
+  display: flex;
+  align-items: center;
+}
+
+.headerLogo {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.11;
+  letter-spacing: -0.03em;
+  color: #111;
+  margin-right: 76px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.headerLogo::after {
+  content: "";
+  width: 24px;
+  height: 24px;
+  background-image: url("/img/logo.svg");
+  background-size: cover;
+}
+
+.headerLogoItalic {
+  font-style: italic;
+}
+
+.headerMenuList {
+  display: none;
+  gap: 24px;
+}
+
+.headerMenuLink {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.14;
+  color: #111;
+  letter-spacing: -0.02em;
+  transition: color 0.3s;
+}
+
+.headerMenuLink:hover,
+.headerMenuLink:focus {
+  color: #fd9222;
+}
+
+.headerContacts {
+  margin-left: auto;
+}
+
+.headerContactsList {
+  display: none;
+  gap: 24px;
+}
+
+.headerContactsIcon {
+  fill: transparent;
+  stroke: #111111;
+  transition: stroke 0.3s;
+}
+
+.headerContactsLink:hover .headerContactsIcon,
+.headerContactsLink:focus .headerContactsIcon {
+  stroke: #fd9222;
+}
+
+.menuOpenBtn {
+  display: block;
+  padding: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .headerMenuList {
+    display: flex;
+  }
+
+  .headerContactsList {
+    display: flex;
+  }
+
+  .menuOpenBtn {
+    display: none;
+  }
+  .menuOpenBtn svg {
+    fill: transparent;
+    stroke: #111111;
+    stroke-width: 2px;
+  }
+}

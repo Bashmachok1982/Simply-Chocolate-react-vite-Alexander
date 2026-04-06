@@ -1,0 +1,120 @@
+.review {
+  padding-top: 30px;
+  padding-bottom: 60px;
+}
+
+@media screen and (min-width: 768px) {
+  .review {
+    padding-top: 50px;
+    padding-bottom: 100px;
+  }
+}
+
+.sectionTitle {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 74px;
+}
+
+@media screen and (min-width: 768px) {
+  .sectionTitle {
+    font-size: 24px;
+  }
+}
+
+.accent {
+  color: #fd9222;
+}
+
+.reviewList {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  margin-bottom: 32px;
+}
+
+@media screen and (min-width: 768px) {
+  .reviewList {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 28px;
+    margin-bottom: 50px;
+  }
+}
+
+/* Карточка отзыва */
+.reviewItem {
+  border: 1px solid rgba(17, 17, 17, 0.1);
+  border-radius: 15px;
+  background-color: #fff;
+  width: 100%;
+  padding: 56px 24px 24px;
+  /* relative — чтобы аватарка с absolute позиционировалась внутри */
+  position: relative;
+}
+
+@media screen and (min-width: 768px) {
+  .reviewItem {
+    /* 2 карточки на планшете */
+    width: calc((100% - 28px) / 2);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .reviewItem {
+    /* 3 карточки на десктопе */
+    width: calc((100% - 2 * 28px) / 3);
+  }
+}
+
+/* Аватарка торчит сверху карточки */
+.reviewImg {
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  /* translate(-50%, -50%) — центрируем по горизонтали и поднимаем на половину высоты */
+  transform: translate(-50%, -50%);
+}
+
+.reviewSubtitle {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.33;
+  text-align: center;
+  color: #111;
+  margin-bottom: 24px;
+}
+
+.reviewText {
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.02em;
+  text-align: center;
+  color: rgba(17, 17, 17, 0.7);
+}
+
+/* Кнопка Leave a review */
+.reviewBtn {
+  font-weight: 600;
+  font-size: 18px;
+  color: #111;
+  display: block;
+  margin: 0 auto;
+  border: 1px solid #fd9222;
+  border-radius: 100px;
+  padding: 14px 40px;
+  background-color: transparent;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+}
+
+.reviewBtn:hover {
+  background-color: #fd9222;
+  color: #fff;
+}

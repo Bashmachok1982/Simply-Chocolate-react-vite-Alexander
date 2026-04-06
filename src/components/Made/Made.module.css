@@ -1,0 +1,124 @@
+.made {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+@media screen and (min-width: 768px) {
+  .made {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+}
+
+/* Общий стиль заголовка — повторяется в каждой секции */
+/* Позже вынесем в global.css если надоест копировать */
+.sectionTitle {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+@media screen and (min-width: 768px) {
+  .sectionTitle {
+    font-size: 24px;
+    margin-bottom: 50px;
+  }
+}
+
+.accent {
+  color: #fd9222;
+}
+
+.madeWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media screen and (min-width: 1200px) {
+  .madeWrapper {
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
+.madeImg {
+  width: 100%;
+  border-radius: 15px;
+}
+
+@media screen and (min-width: 1200px) {
+  .madeImg {
+    width: 600px;
+    flex-shrink: 0;
+  }
+}
+
+.madeContent {
+  background-color: #fff;
+  padding: 20px 14px;
+  border-radius: 15px;
+}
+
+@media screen and (min-width: 768px) {
+  .madeContent {
+    padding: 32px;
+  }
+}
+
+.madeSubtitle {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 1.33;
+  color: #111;
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .madeSubtitle {
+    margin-bottom: 28px;
+  }
+}
+
+.madeList {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+@media screen and (min-width: 768px) {
+  .madeList {
+    gap: 24px;
+  }
+}
+
+/* Кружочек перед каждым пунктом — через ::before псевдоэлемент */
+/* В React это делается так же как в обычном CSS */
+.madeItem {
+  padding-left: 16px;
+  position: relative;
+}
+
+.madeItem::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 5px;
+  width: 8px;
+  height: 8px;
+  background-color: #4c4c4c;
+  border: 1px solid #eceded;
+  border-radius: 50%;
+}
+
+.madeText {
+  font-size: 14px;
+  line-height: 1.29;
+  letter-spacing: -0.02em;
+  color: #111;
+}

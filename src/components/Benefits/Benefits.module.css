@@ -1,0 +1,94 @@
+.benefits {
+  background-color: #1e1823;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.benefitsList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.benefitsItem {
+  width: 100%;
+  padding: 0 18px;
+}
+
+.iconWrap {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+  color: #fd9222;
+}
+
+.iconWrap svg {
+  fill: currentColor;
+}
+.iconWrap:hover {
+  color: #fff; /* иконка тоже станет белой */
+}
+
+.benefitsTitle {
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 0.01em;
+  color: #fff;
+  margin-bottom: 18px;
+}
+
+.benefitsText {
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Планшет — 2 колонки, разделитель между элементами */
+@media screen and (min-width: 768px) {
+  .benefits {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .benefitsList {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+
+  .benefitsItem {
+    /* 2 колонки с учётом gap */
+    width: calc((100% - 32px) / 2);
+    /* Разделитель справа — кроме чётных элементов */
+    position: relative;
+    padding-right: 28px;
+  }
+
+  /* Вертикальная линия-разделитель */
+  .benefitsItem:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}
+
+/* Десктоп — 3 колонки */
+@media screen and (min-width: 1200px) {
+  .benefitsList {
+    flex-wrap: nowrap;
+    gap: 70px;
+  }
+
+  .benefitsItem {
+    width: calc((100% - 2 * 70px) / 3);
+  }
+}

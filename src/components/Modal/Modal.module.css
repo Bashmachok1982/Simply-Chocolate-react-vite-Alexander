@@ -1,0 +1,232 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity 0.3s,
+    visibility 0.3s;
+  /* центрируем модалку */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.isOpen {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.modal {
+  position: relative;
+  width: calc(100vw - 40px);
+  max-width: 517px;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: 15px;
+  background-color: #fafafa;
+  padding: 32px 24px;
+}
+
+@media screen and (min-width: 768px) {
+  .modal {
+    padding: 40px;
+  }
+}
+
+.modalClose {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sectionTitle {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+@media screen and (min-width: 768px) {
+  .sectionTitle {
+    font-size: 24px;
+  }
+}
+
+.accent {
+  color: #fd9222;
+}
+
+.modalTitle {
+  text-align: left;
+  max-width: 300px;
+  margin-bottom: 32px;
+}
+
+@media screen and (min-width: 768px) {
+  .modalTitle {
+    margin-bottom: 40px;
+  }
+}
+
+.modalForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.modalField {
+  margin-bottom: 14px;
+}
+
+@media screen and (min-width: 768px) {
+  .modalField {
+    margin-bottom: 18px;
+  }
+}
+
+.modalInputLabel {
+  display: block;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  color: rgba(64, 64, 64, 0.3);
+  margin-bottom: 8px;
+}
+
+.inputWrapper {
+  position: relative;
+}
+
+/* Общий стиль для input и textarea */
+.modalElement {
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid rgba(17, 17, 17, 0.15);
+  border-radius: 13px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s;
+  color: #111;
+}
+
+.modalElement:focus {
+  border-color: #fd9222;
+}
+
+.modalElement::placeholder {
+  font-size: 14px;
+  color: rgba(64, 64, 64, 0.3);
+}
+
+.modalInput {
+  height: 68px;
+  padding: 0 16px 0 62px;
+}
+
+.modalTextarea {
+  height: 137px;
+  padding: 22px 16px;
+  resize: none;
+  display: block;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  fill: transparent;
+  stroke: #404040;
+  transition: stroke 0.3s;
+  pointer-events: none;
+}
+
+/* focus-within — срабатывает когда фокус внутри .inputWrapper */
+.inputWrapper:focus-within .inputIcon {
+  stroke: #fd9222;
+}
+
+/* Кастомный чекбокс */
+.modalCheckLabel {
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  color: rgba(64, 64, 64, 0.6);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.modalCheckBox {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgba(17, 17, 17, 0.14);
+  border-radius: 6px;
+  background-color: transparent;
+  fill: transparent;
+  transition:
+    background-color 0.3s,
+    border-color 0.3s,
+    fill 0.3s;
+}
+
+/* Когда чекбокс checked — меняем стиль кастомного квадратика */
+/* :global нужен в CSS Modules чтобы обратиться к классу из другого модуля */
+/* visually-hidden — глобальный класс из global.css */
+:global(.visually-hidden):checked + .modalCheckLabel > .modalCheckBox {
+  background-color: #fd9222;
+  border-color: #fd9222;
+  fill: #fff;
+}
+
+.checkIcon {
+  fill: inherit;
+}
+
+.policyLink {
+  text-decoration: underline;
+  color: #fd9222;
+}
+
+.modalSubmitBtn {
+  font-weight: 600;
+  font-size: 14px;
+  color: #fff;
+  background-color: #fd9222;
+  border: none;
+  border-radius: 100px;
+  padding: 14px 40px;
+  margin-top: 18px;
+  align-self: flex-start;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
+  cursor: pointer;
+}
+
+.modalSubmitBtn:hover {
+  background-color: #fcf1e0;
+  color: #fd9222;
+}
+
+.modalSubmitBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
