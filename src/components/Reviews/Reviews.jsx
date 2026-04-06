@@ -1,3 +1,7 @@
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
 import styles from "./Reviews.module.css";
 
 const REVIEWS = [
@@ -24,38 +28,57 @@ const REVIEWS = [
   },
 ];
 
-// onOpenModal — проп который придёт из App.jsx
-// когда дойдём до модалки — подключим
 function Reviews({ onOpenModal }) {
   return (
     <section className={styles.review} id="reviews">
       <div className="container">
-        <h2 className={`${styles.reviewTitle} ${styles.sectionTitle}`}>
+        <h2 className={styles.sectionTitle}>
           <span className={styles.accent}>chocolate</span> is loved
         </h2>
 
-        <ul className={styles.reviewList}>
-          {REVIEWS.map((review, index) => (
-            <li
-              key={review.id}
-              className={styles.reviewItem}
-              data-aos="zoom-in"
-              data-aos-delay={index * 150}
-            >
-              {/* Аватарка позиционируется абсолютно — торчит сверху карточки */}
-              <img
-                srcSet={`${review.img1x} 1x, ${review.img2x} 2x`}
-                src={review.img1x}
-                alt={review.name}
-                width="80"
-                height="80"
-                className={styles.reviewImg}
-              />
-              <h3 className={styles.reviewSubtitle}>{review.name}</h3>
-              <p className={styles.reviewText}>{review.text}</p>
-            </li>
-          ))}
-        </ul>
+        <div className={styles.swiperOuter}>
+          <Swiper
+            modules={[Pagination]}
+            spaceBetween={16}
+            slidesPerView={1}
+            pagination={{ clickable: true }}
+            breakpoints={{
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 16,
+              },
+              1200: {
+                slidesPerView: 3,
+                spaceBetween: 28,
+              },
+            }}
+          >
+            {REVIEWS.map((review, index) => (
+              <SwiperSlide key={review.id}>
+                <div
+                  className={styles.cardWrapper}
+                  data-aos="zoom-in"
+                  data-aos-delay={index * 150}
+                >
+                  <div className={styles.avatar}>
+                    <img
+                      srcSet={`${review.img1x} 1x, ${review.img2x} 2x`}
+                      src={review.img1x}
+                      alt={review.name}
+                      width="80"
+                      height="80"
+                    />
+                  </div>
+
+                  <div className={styles.reviewItem}>
+                    <h3 className={styles.reviewSubtitle}>{review.name}</h3>
+                    <p className={styles.reviewText}>{review.text}</p>
+                  </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
 
         <button
           className={styles.reviewBtn}

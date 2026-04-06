@@ -3,118 +3,115 @@
   padding-bottom: 60px;
 }
 
-@media screen and (min-width: 768px) {
-  .review {
-    padding-top: 50px;
-    padding-bottom: 100px;
-  }
-}
-
 .sectionTitle {
   font-weight: 600;
   font-size: 20px;
-  line-height: 1.2;
-  letter-spacing: -0.03em;
-  text-transform: uppercase;
   text-align: center;
   margin-bottom: 74px;
-}
-
-@media screen and (min-width: 768px) {
-  .sectionTitle {
-    font-size: 24px;
-  }
 }
 
 .accent {
   color: #fd9222;
 }
 
-.reviewList {
-  display: flex;
-  flex-direction: column;
-  gap: 60px;
+.swiperOuter {
   margin-bottom: 32px;
 }
 
-@media screen and (min-width: 768px) {
-  .reviewList {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 28px;
-    margin-bottom: 50px;
-  }
+/* swiper контролируем */
+.swiperOuter :global(.swiper) {
+  padding-bottom: 50px;
+}
+.swiperOuter :global(.swiper-slide) {
+  display: flex;
+  height: auto;
 }
 
-/* Карточка отзыва */
+/* ОБЁРТКА КАРТОЧКИ */
+.cardWrapper {
+  position: relative;
+  padding-top: 40px; /* место под аватар */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* АВАТАР */
+.avatar {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  z-index: 2;
+}
+
+.avatar img {
+  border-radius: 50%;
+  display: block;
+}
+
+/* КАРТОЧКА */
 .reviewItem {
   border: 1px solid rgba(17, 17, 17, 0.1);
   border-radius: 15px;
   background-color: #fff;
-  width: 100%;
   padding: 56px 24px 24px;
-  /* relative — чтобы аватарка с absolute позиционировалась внутри */
-  position: relative;
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
-@media screen and (min-width: 768px) {
-  .reviewItem {
-    /* 2 карточки на планшете */
-    width: calc((100% - 28px) / 2);
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .reviewItem {
-    /* 3 карточки на десктопе */
-    width: calc((100% - 2 * 28px) / 3);
-  }
-}
-
-/* Аватарка торчит сверху карточки */
-.reviewImg {
-  border-radius: 50%;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  /* translate(-50%, -50%) — центрируем по горизонтали и поднимаем на половину высоты */
-  transform: translate(-50%, -50%);
-}
-
+/* текст */
 .reviewSubtitle {
   font-weight: 600;
   font-size: 18px;
-  line-height: 1.33;
-  text-align: center;
-  color: #111;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 
 .reviewText {
   font-size: 14px;
-  line-height: 1.29;
-  letter-spacing: -0.02em;
-  text-align: center;
   color: rgba(17, 17, 17, 0.7);
 }
 
-/* Кнопка Leave a review */
-.reviewBtn {
-  font-weight: 600;
-  font-size: 18px;
-  color: #111;
-  display: block;
-  margin: 0 auto;
-  border: 1px solid #fd9222;
-  border-radius: 100px;
-  padding: 14px 40px;
-  background-color: transparent;
-  transition:
-    background-color 0.3s,
-    color 0.3s;
+/* пагинация */
+.swiperOuter :global(.swiper-pagination) {
+  bottom: 0;
 }
 
-.reviewBtn:hover {
-  background-color: #fd9222;
-  color: #fff;
+.swiperOuter :global(.swiper-pagination-bullet) {
+  width: 13px;
+  height: 13px;
+  border: 1px solid #fd9222;
+  background: transparent;
+  opacity: 1;
+}
+
+.swiperOuter :global(.swiper-pagination-bullet-active) {
+  background: #fd9222;
+}
+
+/* кнопка */
+.reviewBtn {
+  display: block;
+  margin: 0 auto;
+  padding: 14px 40px;
+  border-radius: 100px;
+  border: 1px solid #fd9222;
+  background: transparent;
+}
+
+/* адаптив */
+@media (min-width: 768px) {
+  .review {
+    padding-top: 50px;
+    padding-bottom: 100px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .swiperOuter :global(.swiper-pagination) {
+    display: none;
+  }
 }

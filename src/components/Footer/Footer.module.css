@@ -167,3 +167,16 @@
   background-color: #fcf1e0;
   color: #fd9222;
 }
+.statusSuccess {
+  font-size: 12px;
+  color: #27ae60;
+  margin-top: 8px;
+  padding-left: 4px;
+}
+
+.statusError {
+  font-size: 12px;
+  color: #e74c3c;
+  margin-top: 8px;
+  padding-left: 4px;
+}
