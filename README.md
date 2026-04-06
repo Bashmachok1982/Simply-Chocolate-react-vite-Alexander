@@ -1,6 +1,8 @@
 # 🍫 Simply Chocolate
 
-![Simply Chocolate Preview](./public/preview.webp)
+<p align="center">
+  <img src="./public/preview.webp" alt="Project Preview" width="1400">
+</p>
 
 A modern landing page for a premium chocolate brand, built with React + Vite as part of my frontend learning journey.
 
