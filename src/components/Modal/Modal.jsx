@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
+import emailjs from "@emailjs/browser";
 import styles from "./Modal.module.css";
 
 function Modal({ isOpen, onClose }) {
-  // Состояние формы — объект со всеми полями
-  // Один useState для всей формы — удобнее чем 4 отдельных
+  // Состояние формы
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -12,45 +12,82 @@ function Modal({ isOpen, onClose }) {
     policy: false,
   });
 
-  // Закрытие по Escape
+  // Состояние статуса отправки
+  const [status, setStatus] = useState("idle");
+
+  // Закрытие по Escape + блок скролла
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === "Escape") onClose();
     };
+
     if (isOpen) {
       document.addEventListener("keydown", handleKeyDown);
       document.body.style.overflow = "hidden";
     }
+
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
       document.body.style.overflow = "";
     };
   }, [isOpen, onClose]);
 
-  // Универсальный обработчик для всех полей
-  // e.target.name — имя поля (name/email/phone/comment)
-  // e.target.value — значение
+  // Обработчик инпутов
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
+
     setFormData((prev) => ({
-      ...prev, // копируем все предыдущие значения
+      ...prev,
       [name]: type === "checkbox" ? checked : value,
     }));
   };
 
-  const handleSubmit = (e) => {
+  // Отправка формы
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Отзыв:", formData);
-    // Потом здесь будет отправка через EmailJS
-    setFormData({ name: "", email: "", phone: "", comment: "", policy: false });
-    onClose();
+    setStatus("sending");
+
+    try {
+      await emailjs.send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        {
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          comment: formData.comment,
+        },
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+      );
+
+      setStatus("success");
+
+      // очистка формы
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        comment: "",
+        policy: false,
+      });
+
+      // закрытие модалки
+      setTimeout(() => {
+        setStatus("idle");
+        onClose();
+      }, 2000);
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      setStatus("error");
+
+      setTimeout(() => {
+        setStatus("idle");
+      }, 3000);
+    }
   };
 
-  // Закрытие по клику на backdrop
+  // Закрытие по backdrop
   const handleBackdropClick = (e) => {
-    // e.target — элемент по которому кликнули
-    // e.currentTarget — элемент на котором висит обработчик (backdrop)
-    // Если кликнули именно по backdrop а не по модалке внутри — закрываем
     if (e.target === e.currentTarget) onClose();
   };
 
@@ -164,7 +201,6 @@ function Modal({ isOpen, onClose }) {
 
           {/* Checkbox */}
           <div className={styles.modalField}>
-            {/* visually-hidden — скрываем нативный чекбокс, рисуем свой */}
             <input
               type="checkbox"
               id="policy"
@@ -186,13 +222,26 @@ function Modal({ isOpen, onClose }) {
             </label>
           </div>
 
+          {/* Кнопка */}
           <button
             type="submit"
             className={styles.modalSubmitBtn}
-            disabled={!formData.policy}
+            disabled={!formData.policy || status === "sending"}
           >
-            Send
+            {status === "sending" ? "Sending..." : "Send"}
           </button>
+
+          {/* Сообщения */}
+          {status === "success" && (
+            <p style={{ color: "green", marginTop: "10px" }}>
+              Message sent successfully ✅
+            </p>
+          )}
+          {status === "error" && (
+            <p style={{ color: "red", marginTop: "10px" }}>
+              Error sending message ❌
+            </p>
+          )}
         </form>
       </div>
     </div>

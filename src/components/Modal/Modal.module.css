@@ -76,6 +76,23 @@
   max-width: 300px;
   margin-bottom: 32px;
 }
+.statusSuccess {
+  font-size: 14px;
+  color: #27ae60;
+  background-color: #eafaf1;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+}
+
+.statusError {
+  font-size: 14px;
+  color: #e74c3c;
+  background-color: #fdf0ef;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+}
 
 @media screen and (min-width: 768px) {
   .modalTitle {

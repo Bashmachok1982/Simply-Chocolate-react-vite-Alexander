@@ -59,10 +59,12 @@ function Taste() {
           step of our process adds up to one exceptional taste sensation.
         </p>
         <ul className={styles.tasteList}>
-          {TASTE_ITEMS.map((item) => (
+          {TASTE_ITEMS.map((item, index) => (
             <li
               key={item.id}
               className={`${styles.tasteItem} ${item.dark ? styles.tasteItemDark : ""}`}
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
             >
               {/* Картинка */}
               <img

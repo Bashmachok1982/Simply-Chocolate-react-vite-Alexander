@@ -35,7 +35,7 @@ function Made() {
           {/* picture — адаптивные картинки для каждого брейкпоинта */}
           {/* Браузер сам выбирает нужный source сверху вниз */}
           {/* Первый подходящий media — тот и используется */}
-          <picture>
+          <picture data-aos="fade-right">
             <source
               srcSet="/img/made/made-desktop-1x.webp 1x, /img/made/made-desktop-2x.webp 2x"
               media="(min-width: 1200px)"
@@ -55,7 +55,7 @@ function Made() {
             />
           </picture>
 
-          <div className={styles.madeContent}>
+          <div className={styles.madeContent} data-aos="fade-left">
             <h3 className={styles.madeSubtitle}>
               Try our chocolates today and discover the perfect balance of
               flavor

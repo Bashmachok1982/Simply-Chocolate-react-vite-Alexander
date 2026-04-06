@@ -3,7 +3,7 @@ import styles from "./Hero.module.css";
 function Hero({ onOpenModal }) {
   return (
     <section className={styles.hero}>
-      <div className={`container ${styles.heroContainer}`}>
+      <div className={`container ${styles.heroContainer}`} data-aos="fade-up">
         <h1 className={styles.heroTitle}>
           Treat yourself or a loved one to our finest ingredients for a moment
           of pure delight!

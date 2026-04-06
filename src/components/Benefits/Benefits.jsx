@@ -29,8 +29,13 @@ function Benefits() {
         {/* visually-hidden — элемент скрыт визуально но доступен скринридерам */}
         <h2 className="visually-hidden">Features</h2>
         <ul className={styles.benefitsList}>
-          {BENEFITS.map((benefit) => (
-            <li key={benefit.id} className={styles.benefitsItem}>
+          {BENEFITS.map((benefit, index) => (
+            <li
+              key={benefit.id}
+              className={styles.benefitsItem}
+              data-aos="fade-up" // delay — каждая карточка появляется чуть позже предыдущей
+              data-aos-delay={index * 150}
+            >
               {/* Иконка в кружочке */}
               <div className={styles.iconWrap}>
                 <svg width="32" height="32">

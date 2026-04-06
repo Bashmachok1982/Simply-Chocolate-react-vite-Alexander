@@ -35,8 +35,13 @@ function Reviews({ onOpenModal }) {
         </h2>
 
         <ul className={styles.reviewList}>
-          {REVIEWS.map((review) => (
-            <li key={review.id} className={styles.reviewItem}>
+          {REVIEWS.map((review, index) => (
+            <li
+              key={review.id}
+              className={styles.reviewItem}
+              data-aos="zoom-in"
+              data-aos-delay={index * 150}
+            >
               {/* Аватарка позиционируется абсолютно — торчит сверху карточки */}
               <img
                 srcSet={`${review.img1x} 1x, ${review.img2x} 2x`}
