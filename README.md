@@ -10,20 +10,30 @@ A modern landing page for a premium chocolate brand, built with React + Vite as 
 
 ## 🛠️ Tech Stack
 
-- **React 18** — component-based UI
+- **React 19** — component-based UI
 - **Vite** — blazing fast build tool
 - **CSS Modules** — scoped, conflict-free styles
-- **Responsive Design** — mobile / tablet / desktop
-  @emailjs
+- **Swiper** — touch slider for reviews section
+- **AOS** — scroll animations
+- **EmailJS** — contact form without backend
+- **react-hot-toast** — toast notifications
+- **modern-normalize** — CSS reset
 
 ## 📦 Features
 
-- 📱 Fully responsive — 3 breakpoints (375px / 768px / 1200px)
+📱 Fully responsive — 3 breakpoints (375px / 768px / 1200px)
+
 - 🍔 Mobile menu with scroll lock
 - 🎨 Hover overlays on ingredient cards
 - 🖼️ Adaptive images with 1x/2x retina support
-- 💬 Review modal with controlled form & validation
-- ✉️ Newsletter subscription form in footer
+- 💬 Review modal with star rating
+- ⭐ Star rating system
+- 🔄 Swiper slider with autoplay and pagination
+- 💾 Reviews saved to localStorage
+- ➕ Load more reviews button
+- ✉️ Working contact form via EmailJS
+- 🎞️ Scroll animations via AOS
+- 🔔 Toast notifications via react-hot-toast
 - ♿ Accessible markup — semantic HTML, aria-labels
 
 ## 🏗️ Project Structure
@@ -46,32 +56,34 @@ src/
 ## 🚀 Getting Started
 
 ```bash
-# Clone the repo
-git clone https://github.com/Bashmachok1982/Simply-Chocolate-react-vite-Alex.git
-
-# Install dependencies
+git clone https://github.com/Bashmachok1982/Simply-Chocolate-react-vite-Alexander
+cd Simply-Chocolate-react-vite-Alex
 npm install
-
-# Start dev server
 npm run dev
-
-# Build for production
-npm run build
 ```
+
+## 🔑 Environment Variables
+
+Create `.env` file in root:
+VITE_EMAILJS_SERVICE_ID=your_service_id
+VITE_EMAILJS_TEMPLATE_ID=your_template_id
+VITE_EMAILJS_PUBLIC_KEY=your_public_key
+VITE_EMAILJS_SUBSCRIBE_TEMPLATE_ID=your_subscribe_template_id
 
 ## 📚 What I Learned
 
-This project was built while studying React fundamentals:
-
 - `useState` & `useEffect` hooks
 - Props & lifting state up
-- Controlled forms
-- CSS Modules
+- Controlled forms with validation
+- CSS Modules & responsive design
 - Component architecture
-- Responsive images with `<picture>` tag
+- Local storage for data persistence
+- Third-party libraries integration
+- Working with SVG sprites
+- Adaptive images with `<picture>` tag
 
 ---
 
-Design based on [Simply Chocolate](https://www.figma.com/design/V0iVV3ZPME2xnuGZVjVKDj/) Figma mockup.
+Design based on [Simply Chocolate Figma mockup](https://www.figma.com/design/V0iVV3ZPME2xnuGZVjVKDj/).
 
 Made with ❤️ and a lot of 🍫

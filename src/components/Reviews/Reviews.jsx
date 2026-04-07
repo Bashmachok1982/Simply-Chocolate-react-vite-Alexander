@@ -9,7 +9,7 @@ import "swiper/css/navigation";
 import styles from "./Reviews.module.css";
 
 function Reviews({ reviews, onOpenModal }) {
-  // 🔥 теперь ПРАВИЛЬНО — внутри компонента
+  // 🔥  — внутри компонента
   const [visibleCount, setVisibleCount] = useState(10);
 
   return (
@@ -28,7 +28,7 @@ function Reviews({ reviews, onOpenModal }) {
             navigation={true}
             autoplay={{
               delay: 3000,
-              disableOnInteraction: true,
+              disableOnInteraction: false,
             }}
             loop={true}
             breakpoints={{
@@ -36,7 +36,7 @@ function Reviews({ reviews, onOpenModal }) {
               1200: { slidesPerView: 3, spaceBetween: 28 },
             }}
           >
-            {/* 🔥 ВАЖНО — slice */}
+            {/* 🔥  — slice */}
             {reviews.slice(0, visibleCount).map((review, index) => (
               <SwiperSlide key={review.id}>
                 <div

@@ -12,7 +12,6 @@
   transition:
     opacity 0.3s,
     visibility 0.3s;
-  /* центрируем модалку */
   display: flex;
   align-items: center;
   justify-content: center;

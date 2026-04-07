@@ -3,70 +3,175 @@
     "id": 1,
     "name": "Victoria Dobrzhanska",
     "rating": 5,
-    "text": "I love this chocolate bar. Perfect combination of crispy wafer and smooth chocolate.",
+    "text": "I love this chocolate bar. Perfect combination of crispy wafer and smooth chocolate. Every bite is a pleasure!",
     "img": "https://i.pravatar.cc/80?img=1"
   },
   {
     "id": 2,
     "name": "Nazar Babenko",
     "rating": 4,
-    "text": "Very tasty! The hazelnut cream is smooth and the wafer is perfectly crunchy.",
+    "text": "Very tasty! The hazelnut cream is smooth and the wafer is perfectly crunchy. Great value for the price.",
     "img": "https://i.pravatar.cc/80?img=2"
   },
   {
     "id": 3,
     "name": "Olena Kampusch",
     "rating": 5,
-    "text": "My favorite chocolate treat. I always buy it for my family.",
+    "text": "My favorite chocolate treat. I always buy it for my family. Kids absolutely love it too!",
     "img": "https://i.pravatar.cc/80?img=3"
   },
   {
     "id": 4,
     "name": "Andrii Melnyk",
     "rating": 4,
-    "text": "Good quality chocolate with a nice texture and taste.",
+    "text": "Good quality chocolate with a nice texture and taste. Would definitely recommend to friends.",
     "img": "https://i.pravatar.cc/80?img=4"
   },
   {
     "id": 5,
     "name": "Iryna Shevchenko",
     "rating": 5,
-    "text": "Absolutely delicious! I love the balance of sweetness.",
+    "text": "Absolutely delicious! I love the balance of sweetness. Not too sweet, not too bitter — just perfect.",
     "img": "https://i.pravatar.cc/80?img=5"
   },
   {
     "id": 6,
     "name": "Oleksii Bondar",
     "rating": 3,
-    "text": "Not bad, but a bit too sweet for my taste.",
+    "text": "Not bad, but a bit too sweet for my taste. The texture is good though and packaging is lovely.",
     "img": "https://i.pravatar.cc/80?img=6"
   },
   {
     "id": 7,
     "name": "Dmytro Kovalenko",
     "rating": 5,
-    "text": "Perfect snack with coffee. Highly recommend!",
+    "text": "Perfect snack with coffee. Highly recommend! I buy a new bar every week without exception.",
     "img": "https://i.pravatar.cc/80?img=7"
   },
   {
     "id": 8,
     "name": "Kateryna Hrytsenko",
     "rating": 4,
-    "text": "Very good chocolate, nice packaging and taste.",
+    "text": "Very good chocolate, nice packaging and taste. Makes a great gift for any occasion.",
     "img": "https://i.pravatar.cc/80?img=8"
   },
   {
     "id": 9,
     "name": "Serhii Tkachenko",
     "rating": 5,
-    "text": "Amazing quality! One of the best chocolates I tried.",
+    "text": "Amazing quality! One of the best chocolates I have ever tried. The ingredients are clearly top notch.",
     "img": "https://i.pravatar.cc/80?img=9"
   },
   {
     "id": 10,
     "name": "Anna Moroz",
     "rating": 4,
-    "text": "Tasty and satisfying. Will definitely buy again.",
+    "text": "Tasty and satisfying. Will definitely buy again. The dark chocolate variety is my personal favorite.",
     "img": "https://i.pravatar.cc/80?img=10"
+  },
+  {
+    "id": 11,
+    "name": "Maksym Petrenko",
+    "rating": 5,
+    "text": "Simply outstanding chocolate. The craftsmanship is evident in every single piece. A true luxury treat.",
+    "img": "https://i.pravatar.cc/80?img=11"
+  },
+  {
+    "id": 12,
+    "name": "Yuliia Savchenko",
+    "rating": 4,
+    "text": "Great chocolate for the price. The milk variety is especially smooth and creamy. My go-to brand now.",
+    "img": "https://i.pravatar.cc/80?img=12"
+  },
+  {
+    "id": 13,
+    "name": "Bohdan Kravchenko",
+    "rating": 5,
+    "text": "I ordered as a gift and everyone was thrilled. Beautiful packaging and incredible taste inside.",
+    "img": "https://i.pravatar.cc/80?img=13"
+  },
+  {
+    "id": 14,
+    "name": "Nataliia Lysenko",
+    "rating": 3,
+    "text": "Decent chocolate but I expected more from the premium price point. Still enjoyable though.",
+    "img": "https://i.pravatar.cc/80?img=14"
+  },
+  {
+    "id": 15,
+    "name": "Roman Marchenko",
+    "rating": 5,
+    "text": "This is hands down the best chocolate I have tasted in Ukraine. Melts perfectly on the tongue.",
+    "img": "https://i.pravatar.cc/80?img=15"
+  },
+  {
+    "id": 16,
+    "name": "Oksana Rudenko",
+    "rating": 4,
+    "text": "Love the variety of flavors available. The nuts edition is my absolute favourite of the bunch.",
+    "img": "https://i.pravatar.cc/80?img=16"
+  },
+  {
+    "id": 17,
+    "name": "Vasyl Karpenko",
+    "rating": 5,
+    "text": "Bought for my wife on her birthday and she was delighted. Premium quality and beautiful presentation.",
+    "img": "https://i.pravatar.cc/80?img=17"
+  },
+  {
+    "id": 18,
+    "name": "Larysa Bondarenko",
+    "rating": 4,
+    "text": "Really enjoyed the semi-sweet variety. Not overwhelming at all and pairs beautifully with wine.",
+    "img": "https://i.pravatar.cc/80?img=18"
+  },
+  {
+    "id": 19,
+    "name": "Pavlo Honcharenko",
+    "rating": 5,
+    "text": "Exceptional product. I have tried many premium chocolates and this one truly stands out from the rest.",
+    "img": "https://i.pravatar.cc/80?img=19"
+  },
+  {
+    "id": 20,
+    "name": "Tetiana Kovalenko",
+    "rating": 4,
+    "text": "The chocolate is rich and flavorful without being too heavy. Perfect afternoon treat with tea.",
+    "img": "https://i.pravatar.cc/80?img=20"
+  },
+  {
+    "id": 21,
+    "name": "Oleh Sydorenko",
+    "rating": 5,
+    "text": "Fantastic quality from start to finish. The attention to detail in both taste and packaging is remarkable.",
+    "img": "https://i.pravatar.cc/80?img=21"
+  },
+  {
+    "id": 22,
+    "name": "Maryna Tkachuk",
+    "rating": 4,
+    "text": "Smooth, creamy and not overly sweet. I appreciate that they use quality ingredients. Will order more.",
+    "img": "https://i.pravatar.cc/80?img=22"
+  },
+  {
+    "id": 23,
+    "name": "Ihor Melnychuk",
+    "rating": 3,
+    "text": "Good chocolate overall. The milk version is better than the dark in my opinion. Decent product.",
+    "img": "https://i.pravatar.cc/80?img=23"
+  },
+  {
+    "id": 24,
+    "name": "Svitlana Kovalchuk",
+    "rating": 5,
+    "text": "Absolutely in love with this brand! Every flavor I tried was better than the last. Pure perfection.",
+    "img": "https://i.pravatar.cc/80?img=24"
+  },
+  {
+    "id": 25,
+    "name": "Artem Bondar",
+    "rating": 4,
+    "text": "Great chocolate with consistent quality across all varieties. Fast delivery and lovely packaging too.",
+    "img": "https://i.pravatar.cc/80?img=25"
   }
 ]
