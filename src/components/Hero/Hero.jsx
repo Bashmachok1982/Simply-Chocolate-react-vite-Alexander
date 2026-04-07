@@ -9,8 +9,6 @@ function Hero({ onOpenModal }) {
           of pure delight!
         </h1>
         <div className={styles.heroButtons}>
-          {/* Эта кнопка позже будет открывать модалку */}
-          {/* Пока просто кнопка — добавим onClick когда дойдём до модалки */}
           <button
             className={`${styles.heroBtn} ${styles.heroBtnOrange}`}
             type="button"

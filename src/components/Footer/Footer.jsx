@@ -40,7 +40,6 @@ function Footer() {
   return (
     <footer className={styles.footer}>
       <div className="container">
-        {/* Верхняя часть — слоган и контакты */}
         <div className={styles.footerInfo}>
           <p className={styles.footerText}>
             <span className={styles.accent}>Chocolate</span> a delicious cure
@@ -72,7 +71,6 @@ function Footer() {
           </div>
         </div>
 
-        {/* Нижняя часть — навигация и форма */}
         <div className={styles.footerBottom}>
           <nav
             aria-label="Footer Navigation"
@@ -89,9 +87,6 @@ function Footer() {
             </ul>
           </nav>
 
-          {/* Форма подписки */}
-          {/* onSubmit на form — правильно, а не onClick на кнопке */}
-          {/* Так форма сработает и при нажатии Enter */}
           <div>
             <form className={styles.footerForm} onSubmit={handleSubmit}>
               <label aria-label="footer email">

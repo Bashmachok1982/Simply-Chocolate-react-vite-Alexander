@@ -11,9 +11,6 @@ const SOCIAL_LINKS = [
   { href: "https://twitter.com", icon: "icon-twit", label: "Twitter" },
 ];
 
-// Компонент получает два пропса: isOpen и onClose
-// Props — это как аргументы функции, только для компонентов
-// Родитель (Header) передаёт их, ребёнок (MobileMenu) получает и использует
 function MobileMenu({ isOpen, onClose }) {
   return (
     <div

@@ -14,6 +14,7 @@ A modern landing page for a premium chocolate brand, built with React + Vite as 
 - **Vite** — blazing fast build tool
 - **CSS Modules** — scoped, conflict-free styles
 - **Responsive Design** — mobile / tablet / desktop
+  @emailjs
 
 ## 📦 Features
 

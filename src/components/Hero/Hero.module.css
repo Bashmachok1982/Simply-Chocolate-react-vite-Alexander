@@ -14,7 +14,6 @@
   margin-bottom: 72px;
 }
 
-/* Retina — мобилка 2x */
 @media screen and (min-resolution: 2dppx) {
   .hero {
     background-image:
@@ -23,7 +22,6 @@
   }
 }
 
-/* Планшет */
 @media screen and (min-width: 768px) {
   .hero {
     padding-top: 671px;
@@ -34,7 +32,6 @@
   }
 }
 
-/* Планшет Retina 2x */
 @media screen and (min-width: 768px) and (min-resolution: 2dppx) {
   .hero {
     background-image:
@@ -43,7 +40,6 @@
   }
 }
 
-/* Десктоп */
 @media screen and (min-width: 1200px) {
   .hero {
     padding-top: 381px;
@@ -54,7 +50,6 @@
   }
 }
 
-/* Десктоп Retina 2x */
 @media screen and (min-width: 1200px) and (min-resolution: 2dppx) {
   .hero {
     background-image:
@@ -155,12 +150,10 @@
   transition: background-color 0.3s;
 }
 
-/* Иконка — fill потому что path без stroke */
 .scrollIcon svg {
   fill: #fd9222;
 }
 
-/* При hover — кружок становится оранжевым, иконка белой */
 .heroBtnScroll:hover .scrollIcon {
   background-color: #fd9222;
 }

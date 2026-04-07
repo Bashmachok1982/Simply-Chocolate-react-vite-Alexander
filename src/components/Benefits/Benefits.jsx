@@ -1,6 +1,5 @@
 import styles from "./Benefits.module.css";
 
-// Данные вынесены за компонент — список не меняется
 const BENEFITS = [
   {
     id: 1,
@@ -26,17 +25,15 @@ function Benefits() {
   return (
     <section className={styles.benefits} id="features">
       <div className="container">
-        {/* visually-hidden — элемент скрыт визуально но доступен скринридерам */}
         <h2 className="visually-hidden">Features</h2>
         <ul className={styles.benefitsList}>
           {BENEFITS.map((benefit, index) => (
             <li
               key={benefit.id}
               className={styles.benefitsItem}
-              data-aos="fade-up" // delay — каждая карточка появляется чуть позже предыдущей
+              data-aos="fade-up" 
               data-aos-delay={index * 150}
             >
-              {/* Иконка в кружочке */}
               <div className={styles.iconWrap}>
                 <svg width="32" height="32">
                   <use href={`/img/icons.svg#${benefit.icon}`} />

@@ -10,7 +10,6 @@
   }
 }
 
-/* Общий стиль заголовка секции */
 .sectionTitle {
   font-weight: 600;
   font-size: 20px;
@@ -59,9 +58,7 @@
   gap: 20px;
 }
 
-/* Карточка */
 .tasteItem {
-  /* position: relative — нужен чтобы overlay позиционировался внутри */
   position: relative;
   overflow: hidden;
   border: 1px solid #fd9222;
@@ -71,7 +68,6 @@
   background-color: #fff;
 }
 
-/* Тёмный вариант карточки (1-й и 3-й элементы) */
 .tasteItemDark {
   background-color: #1e1823;
   border-color: #1e1823;
@@ -107,8 +103,6 @@
   color: #111;
 }
 
-/* ---- Overlay ---- */
-/* По умолчанию скрыт — translateY(100%) сдвигает его вниз за пределы карточки */
 .tasteOverlay {
   position: absolute;
   top: 0;
@@ -123,8 +117,6 @@
   overflow-y: auto;
 }
 
-/* При hover на карточке — overlay выезжает вверх */
-/* Это чистый CSS, никакого JS не нужно! */
 .tasteItem:hover .tasteOverlay {
   transform: translateY(0);
 }

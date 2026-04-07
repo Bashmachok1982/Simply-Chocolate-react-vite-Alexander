@@ -31,7 +31,7 @@
   fill: currentColor;
 }
 .iconWrap:hover {
-  color: #fff; /* иконка тоже станет белой */
+  color: #fff;
 }
 
 .benefitsTitle {
@@ -48,7 +48,6 @@
   color: rgba(255, 255, 255, 0.7);
 }
 
-/* Планшет — 2 колонки, разделитель между элементами */
 @media screen and (min-width: 768px) {
   .benefits {
     padding-top: 50px;
@@ -62,14 +61,11 @@
   }
 
   .benefitsItem {
-    /* 2 колонки с учётом gap */
     width: calc((100% - 32px) / 2);
-    /* Разделитель справа — кроме чётных элементов */
     position: relative;
     padding-right: 28px;
   }
 
-  /* Вертикальная линия-разделитель */
   .benefitsItem:not(:last-child)::after {
     content: "";
     position: absolute;
@@ -81,7 +77,6 @@
   }
 }
 
-/* Десктоп — 3 колонки */
 @media screen and (min-width: 1200px) {
   .benefitsList {
     flex-wrap: nowrap;

@@ -9,7 +9,6 @@ const TASTE_ITEMS = [
       "Milk chocolate is a solid chocolate confectionery containing cocoa, sugar and milk. It is the most consumed type of chocolate. Chocolate was originally sold and consumed as a beverage in pre-Columbian times.",
     img1x: "/img/taste/taste-img-1-1x.webp",
     img2x: "/img/taste/taste-img-1-2x.webp",
-    // тёмный фон у первого элемента — оранжевый
     dark: true,
   },
   {
@@ -66,7 +65,6 @@ function Taste() {
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >
-              {/* Картинка */}
               <img
                 srcSet={`${item.img1x} 1x, ${item.img2x} 2x`}
                 src={item.img1x}
@@ -76,11 +74,8 @@ function Taste() {
                 className={styles.tasteImg}
               />
 
-              {/* Название внизу карточки */}
               <h3 className={styles.tasteSubtitle}>{item.title}</h3>
 
-              {/* Overlay — появляется при hover через CSS */}
-              {/* В React hover-эффекты делаем через CSS, не через JS */}
               <div className={styles.tasteOverlay}>
                 <h3 className={styles.overlayTitle}>{item.title}</h3>
                 <div className={styles.overlayTags}>

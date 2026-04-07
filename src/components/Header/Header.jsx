@@ -88,9 +88,7 @@ function Header() {
         </button>
       </div>
 
-      {/* MobileMenu — отдельный компонент */}
-      {/* Передаём props: isOpen и onClose */}
-      {/* onClose — это наша функция closeMenu, передаём её как значение */}
+      
       <MobileMenu isOpen={isMenuOpen} onClose={closeMenu} />
     </header>
   );
