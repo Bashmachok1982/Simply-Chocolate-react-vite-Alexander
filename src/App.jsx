@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Toaster } from "react-hot-toast";
 import Header from "./components/Header/Header";
 import Hero from "./components/Hero/Hero";
 import Benefits from "./components/Benefits/Benefits";
@@ -51,6 +52,7 @@ function App() {
         onClose={() => setIsReviewOpen(false)}
         onAddReview={addReview}
       />
+      <Toaster position="top-right" />
     </>
   );
 }

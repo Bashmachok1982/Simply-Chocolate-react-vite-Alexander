@@ -157,6 +157,15 @@
 .swiperOuter :global(.swiper-button-next::after) {
   font-size: 16px;
 }
+.loadMoreBtn {
+  display: block;
+  margin: 20px auto 20px;
+  padding: 12px 30px;
+  border-radius: 100px;
+  border: 1px solid #fd9222;
+  background: transparent;
+  cursor: pointer;
+}
 /* адаптив */
 @media (min-width: 768px) {
   .review {
