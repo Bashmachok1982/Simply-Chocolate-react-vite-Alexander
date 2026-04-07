@@ -1,49 +1,28 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { Pagination, Navigation } from "swiper/modules";
+import "swiper/css/navigation";
 import "swiper/css";
 import "swiper/css/pagination";
 import styles from "./Reviews.module.css";
-import reviews from "../../data/reviews.json";
 
-/* ⭐ компонент звезд */
-function Stars({ rating }) {
-  return (
-    <div className={styles.stars}>
-      {[1, 2, 3, 4, 5].map((star) => (
-        <span
-          key={star}
-          className={star <= rating ? styles.starActive : styles.star}
-        >
-          ★
-        </span>
-      ))}
-    </div>
-  );
-}
-
-function Reviews({ onOpenModal }) {
+function Reviews({ reviews, onOpenModal }) {
   return (
     <section className={styles.review} id="reviews">
       <div className="container">
-        <h2 className={styles.sectionTitle}>
+        <h2 className={`${styles.sectionTitle}`}>
           <span className={styles.accent}>CHOCOLATE</span> IS LOVED
         </h2>
 
         <div className={styles.swiperOuter}>
           <Swiper
-            modules={[Pagination]}
+            modules={[Pagination, Navigation]}
             spaceBetween={16}
             slidesPerView={1}
             pagination={{ clickable: true }}
+            navigation={true}
             breakpoints={{
-              768: {
-                slidesPerView: 2,
-                spaceBetween: 16,
-              },
-              1200: {
-                slidesPerView: 3,
-                spaceBetween: 28,
-              },
+              768: { slidesPerView: 2, spaceBetween: 16 },
+              1200: { slidesPerView: 3, spaceBetween: 28 },
             }}
           >
             {reviews.map((review, index) => (
@@ -51,8 +30,9 @@ function Reviews({ onOpenModal }) {
                 <div
                   className={styles.cardWrapper}
                   data-aos="zoom-in"
-                  data-aos-delay={index * 150}
+                  data-aos-delay={index * 100}
                 >
+                  {/* 🔥 АВАТАР НАД КАРТОЧКОЙ */}
                   <div className={styles.avatar}>
                     <img
                       src={review.img}
@@ -62,11 +42,24 @@ function Reviews({ onOpenModal }) {
                     />
                   </div>
 
+                  {/* 🔥 КАРТОЧКА */}
                   <div className={styles.reviewItem}>
                     <h3 className={styles.reviewSubtitle}>{review.name}</h3>
 
-                    {/* ⭐ рейтинг */}
-                    <Stars rating={review.rating} />
+                    <div className={styles.stars}>
+                      {[1, 2, 3, 4, 5].map((star) => (
+                        <span
+                          key={star}
+                          className={
+                            star <= review.rating
+                              ? styles.starActive
+                              : styles.star
+                          }
+                        >
+                          ★
+                        </span>
+                      ))}
+                    </div>
 
                     <p className={styles.reviewText}>{review.text}</p>
                   </div>

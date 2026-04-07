@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "./ReviewsModal.module.css";
 
-function ReviewModal({ isOpen, onClose }) {
+function ReviewModal({ isOpen, onClose, onAddReview }) {
   const [name, setName] = useState("");
   const [text, setText] = useState("");
   const [rating, setRating] = useState(0);
@@ -16,12 +16,17 @@ function ReviewModal({ isOpen, onClose }) {
       name,
       text,
       rating,
+      // pravatar генерирует аватарку по имени — каждый раз разная
       img: `https://i.pravatar.cc/80?u=${name}`,
     };
 
-    console.log("NEW REVIEW:", newReview);
+    // Передаём новый отзыв наверх в App.jsx
+    onAddReview(newReview);
 
-    /* 👉 позже сюда добавим setReviews */
+    // Сбрасываем форму
+    setName("");
+    setText("");
+    setRating(0);
 
     onClose();
   };
@@ -51,7 +56,7 @@ function ReviewModal({ isOpen, onClose }) {
             required
           />
 
-          {/* ⭐ рейтинг */}
+          {/* Звёзды рейтинга */}
           <div className={styles.stars}>
             {[1, 2, 3, 4, 5].map((star) => (
               <span
@@ -64,7 +69,11 @@ function ReviewModal({ isOpen, onClose }) {
             ))}
           </div>
 
-          <button type="submit" className={styles.submit}>
+          <button
+            type="submit"
+            className={styles.submit}
+            disabled={rating === 0}
+          >
             Send
           </button>
         </form>

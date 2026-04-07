@@ -105,17 +105,57 @@
   display: flex;
   justify-content: center;
   gap: 4px;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
 .star {
-  color: #e0e0e0;
-  font-size: 18px;
+  font-size: 20px;
+  color: #ccc;
 }
 
 .starActive {
+  font-size: 20px;
   color: #fd9222;
-  font-size: 18px;
+}
+/* СТРЕЛКИ */
+
+/* КОНТЕЙНЕР СВАЙПЕРА */
+.swiperOuter :global(.swiper) {
+  position: relative;
+  padding-bottom: 70px; /* место под стрелки + точки */
+}
+
+/* ПАГИНАЦИЯ по центру */
+.swiperOuter :global(.swiper-pagination) {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* СТРЕЛКИ ВНИЗУ */
+.swiperOuter :global(.swiper-button-prev),
+.swiperOuter :global(.swiper-button-next) {
+  top: auto;
+  bottom: 0;
+  transform: none;
+  width: 32px;
+  height: 32px;
+  color: #fd9222;
+}
+/* СЛЕВА от точек */
+.swiperOuter :global(.swiper-button-prev) {
+  left: calc(50% - 150px);
+}
+
+/* СПРАВА от точек */
+.swiperOuter :global(.swiper-button-next) {
+  right: calc(50% - 150px);
+}
+
+/* размер стрелок */
+.swiperOuter :global(.swiper-button-prev::after),
+.swiperOuter :global(.swiper-button-next::after) {
+  font-size: 16px;
 }
 /* адаптив */
 @media (min-width: 768px) {
