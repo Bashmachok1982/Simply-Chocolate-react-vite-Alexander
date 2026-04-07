@@ -6,25 +6,44 @@ import Taste from "./components/Taste/Taste";
 import Made from "./components/Made/Made";
 import Reviews from "./components/Reviews/Reviews";
 import Footer from "./components/Footer/Footer";
-import Modal from "./components/Modal/Modal";
+
+import BuyModal from "./components/Modal/Modal";
+import ReviewModal from "./components/Reviews/ReviewsModal";
 
 function App() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
+  /* 🟠 модалка покупки */
+  const [isBuyOpen, setIsBuyOpen] = useState(false);
+
+  /* 🔵 модалка отзывов */
+  const [isReviewOpen, setIsReviewOpen] = useState(false);
+
+  const openBuyModal = () => setIsBuyOpen(true);
+  const closeBuyModal = () => setIsBuyOpen(false);
+
+  const openReviewModal = () => setIsReviewOpen(true);
+  const closeReviewModal = () => setIsReviewOpen(false);
 
   return (
     <>
       <Header />
+
       <main>
-        <Hero onOpenModal={openModal} />
+        <Hero onOpenModal={openBuyModal} />
+
         <Benefits />
         <Taste />
         <Made />
-        <Reviews onOpenModal={openModal} />
+
+        <Reviews onOpenModal={openReviewModal} />
       </main>
+
       <Footer />
-      <Modal isOpen={isModalOpen} onClose={closeModal} />
+
+      {/* 🟠 модалка покупки */}
+      <BuyModal isOpen={isBuyOpen} onClose={closeBuyModal} />
+
+      {/* 🔵 модалка отзывов */}
+      <ReviewModal isOpen={isReviewOpen} onClose={closeReviewModal} />
     </>
   );
 }

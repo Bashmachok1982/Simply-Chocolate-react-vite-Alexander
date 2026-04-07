@@ -101,7 +101,22 @@
   border: 1px solid #fd9222;
   background: transparent;
 }
+.stars {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  margin-bottom: 12px;
+}
 
+.star {
+  color: #e0e0e0;
+  font-size: 18px;
+}
+
+.starActive {
+  color: #fd9222;
+  font-size: 18px;
+}
 /* адаптив */
 @media (min-width: 768px) {
   .review {
@@ -112,6 +127,6 @@
 
 @media (min-width: 1200px) {
   .swiperOuter :global(.swiper-pagination) {
-    display: none;
+    /* display: none; */
   }
 }

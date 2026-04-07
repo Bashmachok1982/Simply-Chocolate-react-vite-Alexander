@@ -3,37 +3,30 @@ import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import styles from "./Reviews.module.css";
+import reviews from "../../data/reviews.json";
 
-const REVIEWS = [
-  {
-    id: 1,
-    name: "Victoria Dobrzhanska",
-    text: "I love this chocolate bar. Perfect combination of light crispy wafer, covered in a thin layer chocolate.",
-    img1x: "/img/review/review-img-1-1x.webp",
-    img2x: "/img/review/review-img-1-2x.webp",
-  },
-  {
-    id: 2,
-    name: "Nazar Babenko",
-    text: "This chocolate confection is a delight! A delight! The wafer is light and crisp, the hazelnut cream is smooth, and the chocolate is good.",
-    img1x: "/img/review/review-img-2-1x.webp",
-    img2x: "/img/review/review-img-2-2x.webp",
-  },
-  {
-    id: 3,
-    name: "Olena Kampusch",
-    text: "Chocolate is a family favourite treat. Love the delicious smooth chocolate and the creaminess inside. The wafer is soft but crunchy.",
-    img1x: "/img/review/review-img-3-1x.webp",
-    img2x: "/img/review/review-img-3-2x.webp",
-  },
-];
+/* ⭐ компонент звезд */
+function Stars({ rating }) {
+  return (
+    <div className={styles.stars}>
+      {[1, 2, 3, 4, 5].map((star) => (
+        <span
+          key={star}
+          className={star <= rating ? styles.starActive : styles.star}
+        >
+          ★
+        </span>
+      ))}
+    </div>
+  );
+}
 
 function Reviews({ onOpenModal }) {
   return (
     <section className={styles.review} id="reviews">
       <div className="container">
         <h2 className={styles.sectionTitle}>
-          <span className={styles.accent}>chocolate</span> is loved
+          <span className={styles.accent}>CHOCOLATE</span> IS LOVED
         </h2>
 
         <div className={styles.swiperOuter}>
@@ -53,7 +46,7 @@ function Reviews({ onOpenModal }) {
               },
             }}
           >
-            {REVIEWS.map((review, index) => (
+            {reviews.map((review, index) => (
               <SwiperSlide key={review.id}>
                 <div
                   className={styles.cardWrapper}
@@ -62,8 +55,7 @@ function Reviews({ onOpenModal }) {
                 >
                   <div className={styles.avatar}>
                     <img
-                      srcSet={`${review.img1x} 1x, ${review.img2x} 2x`}
-                      src={review.img1x}
+                      src={review.img}
                       alt={review.name}
                       width="80"
                       height="80"
@@ -72,6 +64,10 @@ function Reviews({ onOpenModal }) {
 
                   <div className={styles.reviewItem}>
                     <h3 className={styles.reviewSubtitle}>{review.name}</h3>
+
+                    {/* ⭐ рейтинг */}
+                    <Stars rating={review.rating} />
+
                     <p className={styles.reviewText}>{review.text}</p>
                   </div>
                 </div>

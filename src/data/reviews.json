@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Victoria Dobrzhanska",
+    "rating": 5,
+    "text": "I love this chocolate bar. Perfect combination of crispy wafer and smooth chocolate.",
+    "img": "https://i.pravatar.cc/80?img=1"
+  },
+  {
+    "id": 2,
+    "name": "Nazar Babenko",
+    "rating": 4,
+    "text": "Very tasty! The hazelnut cream is smooth and the wafer is perfectly crunchy.",
+    "img": "https://i.pravatar.cc/80?img=2"
+  },
+  {
+    "id": 3,
+    "name": "Olena Kampusch",
+    "rating": 5,
+    "text": "My favorite chocolate treat. I always buy it for my family.",
+    "img": "https://i.pravatar.cc/80?img=3"
+  },
+  {
+    "id": 4,
+    "name": "Andrii Melnyk",
+    "rating": 4,
+    "text": "Good quality chocolate with a nice texture and taste.",
+    "img": "https://i.pravatar.cc/80?img=4"
+  },
+  {
+    "id": 5,
+    "name": "Iryna Shevchenko",
+    "rating": 5,
+    "text": "Absolutely delicious! I love the balance of sweetness.",
+    "img": "https://i.pravatar.cc/80?img=5"
+  },
+  {
+    "id": 6,
+    "name": "Oleksii Bondar",
+    "rating": 3,
+    "text": "Not bad, but a bit too sweet for my taste.",
+    "img": "https://i.pravatar.cc/80?img=6"
+  },
+  {
+    "id": 7,
+    "name": "Dmytro Kovalenko",
+    "rating": 5,
+    "text": "Perfect snack with coffee. Highly recommend!",
+    "img": "https://i.pravatar.cc/80?img=7"
+  },
+  {
+    "id": 8,
+    "name": "Kateryna Hrytsenko",
+    "rating": 4,
+    "text": "Very good chocolate, nice packaging and taste.",
+    "img": "https://i.pravatar.cc/80?img=8"
+  },
+  {
+    "id": 9,
+    "name": "Serhii Tkachenko",
+    "rating": 5,
+    "text": "Amazing quality! One of the best chocolates I tried.",
+    "img": "https://i.pravatar.cc/80?img=9"
+  },
+  {
+    "id": 10,
+    "name": "Anna Moroz",
+    "rating": 4,
+    "text": "Tasty and satisfying. Will definitely buy again.",
+    "img": "https://i.pravatar.cc/80?img=10"
+  }
+]
