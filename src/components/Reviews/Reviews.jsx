@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation, Autoplay } from "swiper/modules";
 
@@ -8,10 +7,7 @@ import "swiper/css/navigation";
 
 import styles from "./Reviews.module.css";
 
-function Reviews({ reviews, onOpenModal }) {
-  // 🔥  — внутри компонента
-  const [visibleCount, setVisibleCount] = useState(10);
-
+function Reviews({ reviews, onOpenModal, visibleCount, setVisibleCount }) {
   return (
     <section className={styles.review} id="reviews">
       <div className="container">
@@ -24,19 +20,32 @@ function Reviews({ reviews, onOpenModal }) {
             modules={[Pagination, Navigation, Autoplay]}
             spaceBetween={16}
             slidesPerView={1}
-            pagination={{ clickable: true }}
+            slidesPerGroup={1}
+            observer={true}
+            observeParents={true}
+            pagination={{
+              clickable: true,
+              dynamicBullets: true,
+            }}
             navigation={true}
             autoplay={{
               delay: 3000,
               disableOnInteraction: false,
             }}
-            loop={true}
+            loop={false}
             breakpoints={{
-              768: { slidesPerView: 2, spaceBetween: 16 },
-              1200: { slidesPerView: 3, spaceBetween: 28 },
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 16,
+                slidesPerGroup: 2,
+              },
+              1200: {
+                slidesPerView: 3,
+                spaceBetween: 28,
+                slidesPerGroup: 3,
+              },
             }}
           >
-            {/* 🔥  — slice */}
             {reviews.slice(0, visibleCount).map((review, index) => (
               <SwiperSlide key={review.id}>
                 <div

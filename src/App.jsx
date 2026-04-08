@@ -16,16 +16,19 @@ function App() {
   const [isBuyOpen, setIsBuyOpen] = useState(false);
   const [isReviewOpen, setIsReviewOpen] = useState(false);
 
-  // 🔥 загрузка из localStorage
+  // 🔥 отзывы
   const [reviews, setReviews] = useState(() => {
     const saved = localStorage.getItem("reviews");
     return saved ? JSON.parse(saved) : initialReviews;
   });
 
-  // 🔥 сохранение в localStorage
+  // 🔥 сохраняем
   useEffect(() => {
     localStorage.setItem("reviews", JSON.stringify(reviews));
   }, [reviews]);
+
+  // 🔥 ВАЖНО: теперь здесь
+  const [visibleCount, setVisibleCount] = useState(10);
 
   const addReview = (newReview) => {
     setReviews((prev) => [newReview, ...prev]);
@@ -34,13 +37,19 @@ function App() {
   return (
     <>
       <Header />
+
       <main>
         <Hero onOpenModal={() => setIsBuyOpen(true)} />
         <Benefits />
         <Taste />
         <Made />
 
-        <Reviews reviews={reviews} onOpenModal={() => setIsReviewOpen(true)} />
+        <Reviews
+          reviews={reviews}
+          onOpenModal={() => setIsReviewOpen(true)}
+          visibleCount={visibleCount}
+          setVisibleCount={setVisibleCount}
+        />
       </main>
 
       <Footer />
@@ -52,6 +61,7 @@ function App() {
         onClose={() => setIsReviewOpen(false)}
         onAddReview={addReview}
       />
+
       <Toaster position="top-right" />
     </>
   );
